@@ -1,7 +1,8 @@
----
+﻿---
 title: 如何利用github+hexo搭建自己的博客!
-author: TroyIrvo
-categories: 随笔
+author:  TroyIrvo
+
+categories:  随笔
 tags:  
 	- hexo
 	- github

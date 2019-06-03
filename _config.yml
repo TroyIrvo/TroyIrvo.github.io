@@ -4,8 +4,8 @@
 
 # Site
 title: 木子驿站
-subtitle:
-description:
+subtitle: 要活成自己的模样!
+description: 努力奋斗！SecondLife
 keywords:
 author: TroyIrvo
 language: zh-CN
@@ -39,15 +39,41 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
   
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:  
+
+search:
+  path: search.xml
+  field: post  
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'  
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+    
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
+
+
 index_generator:
   path: ''
   per_page: 12
