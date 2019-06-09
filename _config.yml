@@ -6,7 +6,7 @@
 title: 木子驿站
 subtitle: 要活成自己的模样!
 description: 努力奋斗！SecondLife
-keywords:
+keywords: 专注移动端开发，前端开发，android开发
 author: TroyIrvo
 language: zh-CN
 timezone:
@@ -95,6 +95,12 @@ time_format: HH:mm:ss
 ## Set per_page to 0 to disable pagination
 per_page: 12
 pagination_dir: page
+
+# lazyload加载
+lazyload:
+  enable: true 
+  onlypost: false
+  loadingImg: /favicon.png
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

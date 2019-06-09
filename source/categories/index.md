@@ -1,10 +1,6 @@
 ---
-
-title:  categories
-
-date:  2019-06-03 17:48:53
-type:  "categories
-"
-layout:  "categories
-"
+title: categories
+date: 2018-10-02 00:47:23
+type: "categories"
+layout: "categories"
 ---
