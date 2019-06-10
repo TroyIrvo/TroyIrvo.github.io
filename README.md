@@ -1,2 +1,0 @@
-# TroyIrvo.github.io
-myBlog
