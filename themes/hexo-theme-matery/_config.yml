@@ -40,7 +40,7 @@ dream:
 # Whether to display the musics.
 # 是否在首页显示音乐.
 music:
-  enable: false
+  enable: true
   showTitle: true
   title: 听听音乐
   fixed: false # 开启吸底模式
@@ -56,10 +56,10 @@ music:
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: false
+  enable: true
   showTitle: true
   title: 精彩视频
-  url: # 必填
+  url: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 必填
   pic:
   thumbnails:
   height: # 如：400
@@ -92,9 +92,9 @@ indexbtn:
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  qq: 123123123
-  github:
-  email: xxx@xx.xx
+  qq: 806427049
+  github: https://github.com/TroyIrvo/
+  email: dhctroy@foxmail.com
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -140,7 +140,7 @@ mathjax:
 # 文章字数统计、阅读时长、总字数统计
 # 激活前请确认你已经安装了 hexo-wordcount 插件，安装命令: `npm i --save hexo-wordcount`
 wordCount:
-  enable: false
+  enable: true
   postWordCount: true
   min2read: true
   totalCount: true
@@ -221,14 +221,14 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: false
-  owner:
-  repo:
+  enable: true
+  owner: TroyIrvo
+  repo: TroyIrvo.github.io
   oauth:
-    clientId:
-    clientSecret:
+    clientId: b632f051b663282c2265
+    clientSecret: 2269a667a1a8dbf0abd8fb7dd373787d30b2163e
   admin:
-
+    - TroyIrvo
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
@@ -243,7 +243,7 @@ gitment:
 # Disqus评论模块的配置，默认为不激活
 disqus:
   enable: false
-  shortname:
+  shortname: TroyIrvo
 
 # Livere comment configuration, the default is not activated
 # Livere 来必力评论模块的配置，默认为不激活
@@ -269,7 +269,7 @@ valine:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/blinkfox/hexo-theme-matery
+  url: https://github.com/TroyIrvo/
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
