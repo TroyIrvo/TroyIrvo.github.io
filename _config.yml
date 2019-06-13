@@ -100,7 +100,7 @@ pagination_dir: page
 lazyload:
   enable: true 
   onlypost: false
-  loadingImg: /avatar.png
+  loadingImg: /medias/avatar.png
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
