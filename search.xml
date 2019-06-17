@@ -4,13 +4,27 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/06/10/hello-world/"/>
-      <url>/2019/06/10/hello-world/</url>
+      <title>如何利用github+hexo搭建自己的博客!</title>
+      <link href="/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/"/>
+      <url>/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p> 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了.</p><p>   不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人!<a id="more"></a>    </p><h2 id="github搭建blog"><a href="#github搭建blog" class="headerlink" title="github搭建blog"></a>github搭建blog</h2><pre><code>github搭建blog</code></pre><blockquote><p><a href="http://www.cnblogs.com/tengj/p/5348560.html" title="hexo搭建教程" target="_blank" rel="noopener"> http://www.cnblogs.com/tengj/p/5348560.html</a><br><a href="http://hifor.net/2015/07/01/零基础免费搭建个人博客-hexo-github/" title="搭建教程" target="_blank" rel="noopener">http://hifor.net/2015/07/01/零基础免费搭建个人博客-hexo-github/</a><br><a href="http://www.jianshu.com/p/465830080ea9" title="搭建教程" target="_blank" rel="noopener">http://www.jianshu.com/p/465830080ea9</a><br><a href="blog主题">TOC</a>     </p></blockquote><h2 id="blog主题"><a href="#blog主题" class="headerlink" title="blog主题"></a>blog主题</h2><pre><code>blog主题</code></pre><blockquote><p><a href="https://github.com/litten/hexo-theme-yilia" title="主题" target="_blank" rel="noopener"> https://github.com/litten/hexo-theme-yilia</a></p></blockquote><h2 id="配置主题的教程"><a href="#配置主题的教程" class="headerlink" title="配置主题的教程"></a>配置主题的教程</h2><pre><code>配置主题的教程</code></pre><blockquote><p><a href="http://blog.csdn.net/willxue123/article/details/50994852" title="配置主题" target="_blank" rel="noopener">http://blog.csdn.net/willxue123/article/details/50994852</a><br><a href="http://jingyan.baidu.com/" title="配置主题" target="_blank" rel="noopener">http://jingyan.baidu.com/</a></p></blockquote><h2 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h2><pre><code>next主题</code></pre><blockquote><p><a href="http://www.jianshu.com/p/f66103553c45" title="nexi主题" target="_blank" rel="noopener">http://www.jianshu.com/p/f66103553c45</a></p></blockquote><h2 id="搭建相册"><a href="#搭建相册" class="headerlink" title="搭建相册"></a>搭建相册</h2><pre><code>搭建相册</code></pre><blockquote><p>   <a href="http://www.tuicool.com/articles/fYZ7Zrj" title="相册" target="_blank" rel="noopener">http://www.tuicool.com/articles/fYZ7Zrj</a><br>    <a href="http://www.cnblogs.com/jarson-7426/" title="相册" target="_blank" rel="noopener">http://www.cnblogs.com/jarson-7426/</a><br>    <a href="http://www.cnblogs.com/xljzlw/p/5137622.html?utm_source=tuicool&utm_medium=referral" title="相册" target="_blank" rel="noopener">http://www.cnblogs.com/xljzlw/p/5137622.html?utm_source=tuicool&amp;utm_medium=referral</a></p></blockquote><p>以上就是我搭建blog时参考的教程.真的是很感谢这些热爱写教程的人.才让我有了一个如此美好的blog.当然在接下来的日子里我会继续完善我的博客.</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>  这是去往<a href="https://troyirvo.github.io/" target="_blank" rel="noopener">本人博客</a>的链接.虽然现在没有什么文章.但以后会慢慢的多起来的.期待各位的关注!!!</p>]]></content>
       
       
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
       
     </entry>
     

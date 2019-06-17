@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://muzilove.cn/"/>
-  <updated>2019-06-10T09:33:00.880Z</updated>
+  <updated>2019-06-17T02:22:47.936Z</updated>
   <id>https://muzilove.cn/</id>
   
   <author>
@@ -17,24 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://muzilove.cn/2019/06/10/hello-world/"/>
-    <id>https://muzilove.cn/2019/06/10/hello-world/</id>
-    <published>2019-06-10T09:45:38.593Z</published>
-    <updated>2019-06-10T09:33:00.880Z</updated>
+    <title>如何利用github+hexo搭建自己的博客!</title>
+    <link href="https://muzilove.cn/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/"/>
+    <id>https://muzilove.cn/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/</id>
+    <published>2018-04-11T05:45:20.000Z</published>
+    <updated>2019-06-17T02:22:47.936Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt; 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了.&lt;/p&gt;
+&lt;p&gt;   不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人!
     
     </summary>
     
+      <category term="教程" scheme="https://muzilove.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="hexo" scheme="https://muzilove.cn/tags/hexo/"/>
+    
+      <category term="github" scheme="https://muzilove.cn/tags/github/"/>
     
   </entry>
   
