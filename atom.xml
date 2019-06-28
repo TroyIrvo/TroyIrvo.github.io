@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://muzilove.cn/"/>
-  <updated>2019-06-17T02:32:30.832Z</updated>
+  <updated>2019-06-28T03:48:42.461Z</updated>
   <id>https://muzilove.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初步用户行为日志分析记录</title>
+    <link href="https://muzilove.cn/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/"/>
+    <id>https://muzilove.cn/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/</id>
+    <published>2019-06-28T03:47:00.000Z</published>
+    <updated>2019-06-28T03:48:42.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;用户行为日志采集方案&quot;&gt;&lt;a href=&quot;#用户行为日志采集方案&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://muzilove.cn/categories/javascript/"/>
+    
+    
+      <category term="埋点统计" scheme="https://muzilove.cn/tags/%E5%9F%8B%E7%82%B9%E7%BB%9F%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>如何利用github+hexo搭建自己的博客!</title>
