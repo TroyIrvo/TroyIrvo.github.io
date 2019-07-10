@@ -111,5 +111,7 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:TroyIrvo/TroyIrvo.github.io.git
+  repo: 
+    github: git@github.com:TroyIrvo/TroyIrvo.github.io.git
+    coding: git@git.dev.tencent.com:dhcalvin/TroyIrvo.github.io.git
   branch: master
