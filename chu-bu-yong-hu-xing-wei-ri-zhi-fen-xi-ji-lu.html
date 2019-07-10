@@ -1,7 +1,474 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="keywords" content="初步用户行为日志分析记录, 专注移动端开发，前端开发，android开发"><meta name="description" content="用户行为日志采集方案关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案主要分为以下三类：
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="初步用户行为日志分析记录, 专注移动端开发，前端开发，android开发">
+    <meta name="description" content="用户行为日志采集方案关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案主要分为以下三类：
 
 代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等；
-可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>初步用户行为日志分析记录 | 木子驿站</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><style type="text/css"></style><script src="/libs/jquery/jquery-2.2.0.min.js"></script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"> <a href="/" class="waves-effect waves-light"><img src="/medias/avatar.png" data-original="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">木子驿站</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a><ul class="right"><li class="hide-on-med-and-down"><a href="/" class="waves-effect waves-light"><i class="fa fa-home"></i> <span>首页</span></a></li><li class="hide-on-med-and-down"><a href="/tags" class="waves-effect waves-light"><i class="fa fa-tags"></i> <span>标签</span></a></li><li class="hide-on-med-and-down"><a href="/categories" class="waves-effect waves-light"><i class="fa fa-bookmark"></i> <span>分类</span></a></li><li class="hide-on-med-and-down"><a href="/archives" class="waves-effect waves-light"><i class="fa fa-archive"></i> <span>归档</span></a></li><li class="hide-on-med-and-down"><a href="/about" class="waves-effect waves-light"><i class="fa fa-user-circle-o"></i> <span>关于</span></a></li><li class="hide-on-med-and-down"><a href="/friends" class="waves-effect waves-light"><i class="fa fa-address-book"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fa fa-search" title="搜索"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"> <img src="/medias/avatar.png" data-original="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">木子驿站</div><div class="logo-desc"> 努力奋斗！SecondLife</div></div><ul class="menu-list mobile-menu-list"><li><a href="/" class="waves-effect waves-light"><i class="fa fa-fw fa-home"></i> 首页</a></li><li><a href="/tags" class="waves-effect waves-light"><i class="fa fa-fw fa-tags"></i> 标签</a></li><li><a href="/categories" class="waves-effect waves-light"><i class="fa fa-fw fa-bookmark"></i> 分类</a></li><li><a href="/archives" class="waves-effect waves-light"><i class="fa fa-fw fa-archive"></i> 归档</a></li><li><a href="/about" class="waves-effect waves-light"><i class="fa fa-fw fa-user-circle-o"></i> 关于</a></li><li><a href="/friends" class="waves-effect waves-light"><i class="fa fa-fw fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/2.jpg)"><div class="container"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-title"> 初步用户行为日志分析记录</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:20px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"> <a href="/tags/埋点统计/" target="_blank"><span class="chip bg-color">埋点统计</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/javascript/" class="post-category" target="_blank">javascript</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="fa fa-calendar-minus-o fa-fw"></i> 发布日期:&nbsp;&nbsp; 2019-06-28</div><div class="info-break-policy"><i class="fa fa-file-word-o fa-fw"></i> 文章字数:&nbsp;&nbsp; 628</div><div class="info-break-policy"><i class="fa fa-clock-o fa-fw"></i> 阅读时长:&nbsp;&nbsp; 2 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="fa fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="用户行为日志采集方案"><a href="#用户行为日志采集方案" class="headerlink" title="用户行为日志采集方案"></a>用户行为日志采集方案</h2><p>关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案<br>主要分为以下三类：</p><ul><li>代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等；</li><li>可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在页面加载时，可以读取配置数据，自动调用接口进行埋点。如开源的Mixpanel;</li><li>无埋点：前端自动采集全部事件并上报埋点数据。如国内的神策数据，目前比较流行的例如GrowingIO等；</li></ul><p>结合目前我们现有的情况，决定使用代码埋点的方式来初步实现公司的用户行为日志采集。</p><h3 id="代码埋点"><a href="#代码埋点" class="headerlink" title="代码埋点"></a>代码埋点</h3><p>代码埋点的方式有：声明式埋点，命令式埋点，注解式埋点。<br>结合现有的技术，打算采用注解式埋点作为基础，逐步扩展，目前参考了一些开源项目，已有大概思路。</p><h3 id="埋点行为"><a href="#埋点行为" class="headerlink" title="埋点行为"></a>埋点行为</h3><p>大概参考了一下网上例子，基本把采集日志的时机场景化了。主要有如下场景行为：</p><h4 id="页面展现埋点"><a href="#页面展现埋点" class="headerlink" title="页面展现埋点"></a>页面展现埋点</h4><p>这种很好理解，一打开即触发埋点行为。一关闭即可触发埋点行为。</p><h4 id="点击统计埋点"><a href="#点击统计埋点" class="headerlink" title="点击统计埋点"></a>点击统计埋点</h4><p>这种类似于点击事件。页面上的按钮，图标等，触发埋点行为。</p><h4 id="区域展现埋点"><a href="#区域展现埋点" class="headerlink" title="区域展现埋点"></a>区域展现埋点</h4><p>这种是有多个切换页面的时候，就有区域的概念，显示隐藏某一块内容的时候触发埋点行为。</p><h4 id="可视范围埋点"><a href="#可视范围埋点" class="headerlink" title="可视范围埋点"></a>可视范围埋点</h4><p>这种就类似所见即所得，当用户屏幕滚动到一定的范围，就开始触发埋点行为。</p><h3 id="采集信息"><a href="#采集信息" class="headerlink" title="采集信息"></a>采集信息</h3><p>目前这块内容还没有完全确定，只有个大概的思路。需要具体采集什么字段，结合我们自身的业务考虑。<br>有一些通用字段可以确定。如</p><table><thead><tr><th>内容</th><th>说明</th></tr></thead><tbody><tr><td>id</td><td>上报信息id</td></tr><tr><td>reportTime</td><td>上报信息时间</td></tr><tr><td>reportContent</td><td>上报内容</td></tr><tr><td>reportType</td><td>上报类型（点击，页面，区域，可视）</td></tr><tr><td>reportDevice</td><td>上报设备型号</td></tr><tr><td>reprotName</td><td>上报人姓名</td></tr><tr><td>reprotOrg</td><td>上报人组织</td></tr></tbody></table><p>以上只是想当然的大概字段，具体如何定，各位可以商量一下。</p><p>相关参考资源链接如下：</p><p><a href="https://www.webfunny.cn/?source=1" target="_blank" rel="noopener">前端监控系统</a></p><p><a href="https://lhammer.cn/v-track/#/" target="_blank" rel="noopener">v-track开源</a></p><p><a href="https://github.com/Qquanwei/trackpoint-tools" target="_blank" rel="noopener">无痕埋点辅助工具库</a></p></div><hr><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div></div><script src="/libs/share/js/social-share.min.js"></script><div class="reprint" id="reprint-statement"><p class="reprint-tip"><i class="fa fa-exclamation-triangle"></i> &nbsp;&nbsp; <span>转载规则</span></p><div class="center-align"> <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh"><img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a></div><br> <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">《初步用户行为日志分析记录》</span> 由 <a xmlns:cc="http://creativecommons.org/ns#" href="/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu.html" property="cc:attributionName" rel="cc:attributionURL">TroyIrvo</a> 采用 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">知识共享署名 4.0 国际许可协议</a> 进行许可。</div><script async defer="defer">
+可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>初步用户行为日志分析记录 | 木子驿站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">木子驿站</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">木子驿站</div>
+        <div class="logo-desc">
+            
+            努力奋斗！SecondLife
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        初步用户行为日志分析记录
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/埋点统计/" target="_blank">
+                                <span class="chip bg-color">埋点统计</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/javascript/" class="post-category" target="_blank">
+                                javascript
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-06-28
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        628
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        2 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="用户行为日志采集方案"><a href="#用户行为日志采集方案" class="headerlink" title="用户行为日志采集方案"></a>用户行为日志采集方案</h2><p>关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案<br>主要分为以下三类：</p>
+<ul>
+<li>代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等；</li>
+<li>可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在页面加载时，可以读取配置数据，自动调用接口进行埋点。如开源的Mixpanel;</li>
+<li>无埋点：前端自动采集全部事件并上报埋点数据。如国内的神策数据，目前比较流行的例如GrowingIO等；</li>
+</ul>
+<p>结合目前我们现有的情况，决定使用代码埋点的方式来初步实现公司的用户行为日志采集。</p>
+<h3 id="代码埋点"><a href="#代码埋点" class="headerlink" title="代码埋点"></a>代码埋点</h3><p>代码埋点的方式有：声明式埋点，命令式埋点，注解式埋点。<br>结合现有的技术，打算采用注解式埋点作为基础，逐步扩展，目前参考了一些开源项目，已有大概思路。</p>
+<h3 id="埋点行为"><a href="#埋点行为" class="headerlink" title="埋点行为"></a>埋点行为</h3><p>大概参考了一下网上例子，基本把采集日志的时机场景化了。主要有如下场景行为：</p>
+<h4 id="页面展现埋点"><a href="#页面展现埋点" class="headerlink" title="页面展现埋点"></a>页面展现埋点</h4><p>这种很好理解，一打开即触发埋点行为。一关闭即可触发埋点行为。</p>
+<h4 id="点击统计埋点"><a href="#点击统计埋点" class="headerlink" title="点击统计埋点"></a>点击统计埋点</h4><p>这种类似于点击事件。页面上的按钮，图标等，触发埋点行为。</p>
+<h4 id="区域展现埋点"><a href="#区域展现埋点" class="headerlink" title="区域展现埋点"></a>区域展现埋点</h4><p>这种是有多个切换页面的时候，就有区域的概念，显示隐藏某一块内容的时候触发埋点行为。</p>
+<h4 id="可视范围埋点"><a href="#可视范围埋点" class="headerlink" title="可视范围埋点"></a>可视范围埋点</h4><p>这种就类似所见即所得，当用户屏幕滚动到一定的范围，就开始触发埋点行为。</p>
+<h3 id="采集信息"><a href="#采集信息" class="headerlink" title="采集信息"></a>采集信息</h3><p>目前这块内容还没有完全确定，只有个大概的思路。需要具体采集什么字段，结合我们自身的业务考虑。<br>有一些通用字段可以确定。如</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>上报信息id</td>
+</tr>
+<tr>
+<td>reportTime</td>
+<td>上报信息时间</td>
+</tr>
+<tr>
+<td>reportContent</td>
+<td>上报内容</td>
+</tr>
+<tr>
+<td>reportType</td>
+<td>上报类型（点击，页面，区域，可视）</td>
+</tr>
+<tr>
+<td>reportDevice</td>
+<td>上报设备型号</td>
+</tr>
+<tr>
+<td>reprotName</td>
+<td>上报人姓名</td>
+</tr>
+<tr>
+<td>reprotOrg</td>
+<td>上报人组织</td>
+</tr>
+</tbody></table>
+<p>以上只是想当然的大概字段，具体如何定，各位可以商量一下。</p>
+<p>相关参考资源链接如下：</p>
+<p><a href="https://www.webfunny.cn/?source=1" target="_blank" rel="noopener">前端监控系统</a></p>
+<p><a href="https://lhammer.cn/v-track/#/" target="_blank" rel="noopener">v-track开源</a></p>
+<p><a href="https://github.com/Qquanwei/trackpoint-tools" target="_blank" rel="noopener">无痕埋点辅助工具库</a></p>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《初步用户行为日志分析记录》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu.html" property="cc:attributionName" rel="cc:attributionURL">
+                TroyIrvo
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
       document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
@@ -10,7 +477,22 @@
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
       }
-    </script></div></div><link rel="stylesheet" href="/libs/gitalk/gitalk.css"><link rel="stylesheet" href="/css/my-gitalk.css"><div class="card gitalk-card" data-aos="fade-up"><div id="gitalk-container" class="card-content"></div></div><script src="/libs/gitalk/gitalk.min.js"></script><script>
+    </script>
+
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
     let gitalk = new Gitalk({
         clientID: 'b632f051b663282c2265',
         clientSecret: '2269a667a1a8dbf0abd8fb7dd373787d30b2163e',
@@ -22,7 +504,188 @@
     });
 
     gitalk.render('gitalk-container');
-</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6 overflow-policy" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fa fa-dot-circle-o"></i> &nbsp;本篇</div><div class="card"><a href="/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu.html"><div class="card-image"> <img src="/medias/avatar.png" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="初步用户行为日志分析记录"> <span class="card-title">初步用户行为日志分析记录</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 用户行为日志采集方案关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案主要分为以下三类： 代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等； 可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i> 2019-06-28</span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/javascript/" class="post-category" target="_blank">javascript</a></span></div></div><div class="card-action article-tags"> <a href="/tags/埋点统计/" target="_blank"><span class="chip bg-color">埋点统计</span></a></div></div></div><div class="article col s12 m6 overflow-policy" data-aos="fade-up"><div class="article-badge right-badge text-color"> 下一篇&nbsp;<i class="fa fa-chevron-right"></i></div><div class="card"><a href="/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke.html"><div class="card-image"> <img src="/medias/avatar.png" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="如何利用github+hexo搭建自己的博客!"> <span class="card-title">如何利用github+hexo搭建自己的博客!</span></div></a><div class="card-content article-content"><div class="summary block-with-text"> 前言 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了. 不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人! github搭建bl</div><div class="publish-info"><span class="publish-date"><i class="fa fa-clock-o fa-fw icon-date"></i> 2018-04-11</span><span class="publish-author"><i class="fa fa-bookmark fa-fw icon-category"></i> <a href="/categories/教程/" class="post-category" target="_blank">教程</a></span></div></div><div class="card-action article-tags"> <a href="/tags/hexo/" target="_blank"><span class="chip bg-color">hexo</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if(void 0!==window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("120"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: 木子驿站<br />作者: TroyIrvo<br />链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fa fa-list"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/avatar.png" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="初步用户行为日志分析记录">
+                        
+                        <span class="card-title">初步用户行为日志分析记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            用户行为日志采集方案关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案主要分为以下三类：
+
+代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等；
+可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/javascript/" class="post-category" target="_blank">
+                                    javascript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/埋点统计/" target="_blank">
+                        <span class="chip bg-color">埋点统计</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/avatar.png" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="如何利用github+hexo搭建自己的博客!">
+                        
+                        <span class="card-title">如何利用github+hexo搭建自己的博客!</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了.
+   不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人!    
+github搭建bl
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-04-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/教程/" class="post-category" target="_blank">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 木子驿站<br />'
+            + '作者: TroyIrvo<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
     $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
@@ -95,4 +758,111 @@
         });
         
     });
-</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right"> 本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">TroyIrvo</a>基于 <a href="https://hexo.io/" target="_blank">Hexo</a> 的 <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建. &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp; <span class="white-color">939</span><br><span id="busuanzi_container_site_pv"><i class="fa fa-heart-o"></i> 本站总访问量<span id="busuanzi_value_site_pv" class="white-color"></span></span><span id="busuanzi_container_site_uv"><i class="fa fa-users"></i> 次,&nbsp;访客数<span id="busuanzi_value_site_uv" class="white-color"></span> 人.</span></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/TroyIrvo/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fa fa-github"></i></a><a href="mailto:dhctroy@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fa fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=806427049" class="tooltipped" data-tooltip="QQ联系我: 806427049" data-position="top" data-delay="50"><i class="fa fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fa fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fa fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fa fa-angle-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script src="/libs/others/clicklove.js"></script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)0<=(t=c[r].getBoundingClientRect()).top&&0<=t.left&&t.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n()},e.src=i}();var t}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this)</script></body></html>
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">TroyIrvo</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">939</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/TroyIrvo/" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:dhctroy@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=806427049" class="tooltipped" data-tooltip="QQ联系我: 806427049" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
