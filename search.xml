@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>一.基于vuecli3+vux搭建项目框架</title>
+      <link href="/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/"/>
+      <url>/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序技术选型资料参考</title>
+      <link href="/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/"/>
+      <url>/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术调研"><a href="#技术调研" class="headerlink" title="技术调研"></a>技术调研</h1><h2 id="小程序背景"><a href="#小程序背景" class="headerlink" title="小程序背景"></a>小程序背景</h2><p>在当前阶段，小程序百花齐放，各家都推出了自己的小程序。主流的有<strong><a href="https://mp.weixin.qq.com/cgi-bin/wx" target="_blank" rel="noopener">微信小程序</a></strong>，<strong><a href="https://mini.open.alipay.com/channel/miniIndex.htm" target="_blank" rel="noopener">支付宝小程序</a></strong>，<strong><a href="https://q.qq.com/" target="_blank" rel="noopener">QQ小程序</a></strong>,<strong><a href="https://developer.toutiao.com/" target="_blank" rel="noopener">字节跳动小程序</a></strong>，<strong><a href="https://smartprogram.baidu.com/developer/index.html" target="_blank" rel="noopener">百度小程序</a></strong>等等。各小程序为了各自的利益。纷纷建立自己的开发规则和语言风格。这对于前端开发人员是及其痛苦的事情。</p><h2 id="小程序发展"><a href="#小程序发展" class="headerlink" title="小程序发展"></a>小程序发展</h2><p>最早微信提供了开发微信小程序的原生方式。制定了一套自己的规则和语言逻辑。但随着业务的庞大，项目更新迭代速度等因素。仅仅使用原生开发方式无法满足<br>大多数开发人员的需求，为此，微信在原生开发的基础上推出了基于<strong><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a></strong>的<strong><a href="https://wepyjs.github.io/wepy-docs/" target="_blank" rel="noopener">Wepy</a></strong>小程序组件化框架。<br>组件化是一种高效的处理复杂应用系统，更好的明确功能模块作用的方式。目的把复杂系统拆分成多个组件，分离组件边界和责任，便于独立升级和维护。故一经推出就受到热烈欢迎。然而<br>随着其它小程序的发展，业界迫切希望有一个强大的框架能够涵盖多家小程序开发。实现一套代码多端复用。这和很早之前就有的跨平台开发其实及其相似。<br>于是就衍生出来了今天的两位主角。<strong><a href="https://taro.aotu.io/" target="_blank" rel="noopener">Taro</a></strong> 与 <strong><a href="https://uniapp.dcloud.io/README" target="_blank" rel="noopener">uni-app</a></strong>.</p><h3 id="Taro"><a href="#Taro" class="headerlink" title="Taro"></a>Taro</h3><p>先看官网介绍。<br>Taro 是一套遵循 React 语法规范的 多端开发 解决方案。<br>现如今市面上端的形态多种多样，Web、React-Native、微信小程序等各种端大行其道，<br>当业务要求同时在不同的端都要求有所表现的时候，针对不同的端去编写多套代码的成本显然非常高，这时候只编写一套代码就能够适配到多端的能力就显得极为需要。<br>使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信/百度/支付宝/字节跳动/QQ小程序、快应用、H5、React-Native 等）运行的代码。<br>下面可以体验一下小程序的感觉。</p><img title="京东购物" src="http://img13.360buyimg.com/uba/jfs/t1/15928/6/12705/268303/5c9a3f55E1aa605df/662afeee167b3d3b.jpg" width="140" height="140"><img title="京东到家" src="http://storage.360buyimg.com/taro-resource/cases/daojia.png" width="140" height="140"><img title="京东到家" src="https://img14.360buyimg.com/uba/jfs/t1/15658/34/15000/57355/5cac3381Ebb1763b1/5ebe50275f9c09d3.jpg" width="140" height="140"><h3 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h3><p>先看官网介绍。uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉）等多个平台。<br>uni，读 you ni，是统一的意思。很多人以为小程序是微信先推出的，其实，DCloud才是这个行业的开创者。<br>在2015年9月，DCloud推进微信团队开展小程序业务，演示了流应用的秒开应用、扫码获取应用、分享链接获取应用等众多场景案例，以及分享了webview体验优化的经验。<br>微信团队经过分析，于2016年初决定上线小程序业务，但其没有接入联盟标准，而是订制了自己的标准。<br>而更多公司因利益纷争严重，标准难以统一。技术是纯粹的，不应该因为商业利益而分裂。开发者面对如此多的私有标准不是一件正确的事情。<br>虽然是始作俑者，但造成混乱的局面非DCloud所愿。于是我们决定开发一个免费开源的框架。既然各巨头无法在标准上达成一致，那么就通过这个框架为开发者抹平各平台差异。这，就是uni-app的由来。</p><img title="csdn" src="https://img-cdn-qiniu.dcloud.net.cn/doc/csdn/csdn.png" width="140" height="140"><img title="csdn" src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/oschina_weixin.jpg" width="140" height="140"><img title="color-ui" src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/img/color-ui-weapp.jpg" width="140" height="140"><img title="color-ui" src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/img/color-ui-H5.jpg" width="140" height="140"><h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><p>京东出品-<strong>(taro泰罗)</strong><a href="https://juejin.im/post/5c90eb366fb9a070d4199cc9" target="_blank" rel="noopener">小程序多端框架全面测评</a></p><p>DCloud出品-<strong>(uni-app统一)</strong><a href="https://juejin.im/post/5ca1736af265da30ae314248" target="_blank" rel="noopener">跨端开发框架深度横评</a></p><p>DCloud出品-<strong>(uni-app统一)</strong><a href="https://juejin.im/post/5cfdcf056fb9a07ecd3d5068" target="_blank" rel="noopener">小程序开发：用原生还是选框架（wepy/mpvue/uni-app/taro）？</a></p><p>路人出品-<strong>(对比分析)</strong><a href="https://zhuanlan.zhihu.com/p/55903320" target="_blank" rel="noopener">Taro vs uni-app选型对比</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>初步用户行为日志分析记录</title>
       <link href="/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/"/>
       <url>/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/</url>
@@ -19,6 +69,8 @@
       
       
         <tags>
+            
+            <tag> vue </tag>
             
             <tag> 埋点统计 </tag>
             
