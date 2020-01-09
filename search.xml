@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>一.基于vuecli3+vux搭建项目框架</title>
+      <title>一.基于Vuecli3+Vux搭建项目框架</title>
       <link href="/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/"/>
       <url>/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于之前公司的项目采用的是<code>VueCli2</code>与<code>Vux</code>相结合的方式。所以打算升级到<code>VueCli3</code>, 但发现<code>Vux</code>官方文档还写着暂不支持。不过有人已经提出了issue.<br>而<code>Vux</code>的作者。也提供了示例demo。 本次教程基于作者给出的Vuxdemo进行升级试验。</p><h2 id="1-Vuecli3"><a href="#1-Vuecli3" class="headerlink" title="1.Vuecli3"></a>1.Vuecli3</h2><p>先说明，本次教程及其基础。仅供有兴趣的读者参考。<br>首先不用说。先安装<code>VueCli3</code>. 命令如下。</p><p><strong><code>npm install -g @vue/cli</code></strong></p><p>如果之前有使用<code>VueVli2</code>的同学。需要先卸载。官网给出了详细的介绍。并且也提供了在全局安装<code>VueCli3</code>的情况下。如何生成使用<code>VueCli2</code>.请参考官方文档。<strong><a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#%E6%8B%89%E5%8F%96-2-x-%E6%A8%A1%E6%9D%BF-%E6%97%A7%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">VueCli3官网</a></strong></p><p>再说回<code>VueCli3</code>,安装好以后，使用<strong><code>VS Code</code></strong>打开安装目录下文件夹。</p><h2 id="2-Vux"><a href="#2-Vux" class="headerlink" title="2.Vux"></a>2.Vux</h2><h2 id="3-Vuecli3-Vux集成"><a href="#3-Vuecli3-Vux集成" class="headerlink" title="3.Vuecli3 + Vux集成"></a>3.Vuecli3 + Vux集成</h2>]]></content>
       
       
       <categories>
@@ -20,7 +20,9 @@
       
         <tags>
             
-            <tag> vue </tag>
+            <tag> Vue </tag>
+            
+            <tag> Vux </tag>
             
         </tags>
       
@@ -70,9 +72,9 @@
       
         <tags>
             
-            <tag> vue </tag>
-            
             <tag> 埋点统计 </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
