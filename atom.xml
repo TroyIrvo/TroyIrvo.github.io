@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>木子驿站</title>
+  
+  <subtitle>要活成自己的模样!</subtitle>
+  <link href="https://muzilove.cn/atom.xml" rel="self"/>
+  
+  <link href="https://muzilove.cn/"/>
+  <updated>2023-04-28T06:42:51.493Z</updated>
+  <id>https://muzilove.cn/</id>
+  
+  <author>
+    <name>TroyIrvo</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一.基于Vuecli3+Vux搭建项目框架</title>
+    <link href="https://muzilove.cn/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/"/>
+    <id>https://muzilove.cn/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/</id>
+    <published>2020-01-07T02:04:50.000Z</published>
+    <updated>2023-04-28T06:42:51.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://muzilove.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Vue" scheme="https://muzilove.cn/tags/Vue/"/>
+    
+    <category term="Vux" scheme="https://muzilove.cn/tags/Vux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小程序技术选型资料参考</title>
+    <link href="https://muzilove.cn/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/"/>
+    <id>https://muzilove.cn/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/</id>
+    <published>2019-12-11T05:45:20.000Z</published>
+    <updated>2023-04-28T06:42:51.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;技术调研&quot;&gt;&lt;a href=&quot;#技术调研&quot; class=&quot;headerlink&quot; title=&quot;技术调研&quot;&gt;&lt;/a&gt;技术调研&lt;/h1&gt;&lt;h2 id=&quot;小程序背景&quot;&gt;&lt;a href=&quot;#小程序背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://muzilove.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="小程序" scheme="https://muzilove.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初步用户行为日志分析记录</title>
+    <link href="https://muzilove.cn/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/"/>
+    <id>https://muzilove.cn/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/</id>
+    <published>2019-06-28T03:47:00.000Z</published>
+    <updated>2023-04-28T06:42:51.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;用户行为日志采集方案&quot;&gt;&lt;a href=&quot;#用户行为日志采集方案&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="javascript" scheme="https://muzilove.cn/categories/javascript/"/>
+    
+    
+    <category term="埋点统计" scheme="https://muzilove.cn/tags/%E5%9F%8B%E7%82%B9%E7%BB%9F%E8%AE%A1/"/>
+    
+    <category term="vue" scheme="https://muzilove.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何利用github+hexo搭建自己的博客!</title>
+    <link href="https://muzilove.cn/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/"/>
+    <id>https://muzilove.cn/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/</id>
+    <published>2018-04-11T05:45:20.000Z</published>
+    <updated>2023-04-28T06:42:51.494Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt; 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了.&lt;/p&gt;
+&lt;p&gt;   不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人!</summary>
+    
+    
+    
+    <category term="教程" scheme="https://muzilove.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="hexo" scheme="https://muzilove.cn/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

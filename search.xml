@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>一.基于Vuecli3+Vux搭建项目框架</title>
+      <link href="/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/"/>
+      <url>/2020/01/07/yi-ji-yu-vuecli3-vux-da-jian-xiang-mu-kuang-jia/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于之前公司的项目采用的是<code>VueCli2</code>与<code>Vux</code>相结合的方式。所以打算升级到<code>VueCli3</code>, 但发现<code>Vux</code>官方文档还写着暂不支持。不过有人已经提出了issue.<br>而<code>Vux</code>的作者。也提供了示例demo。 本次教程基于作者给出的Vuxdemo进行升级试验。</p><h2 id="1-Vuecli3"><a href="#1-Vuecli3" class="headerlink" title="1.Vuecli3"></a>1.Vuecli3</h2><p>先说明，本次教程及其基础。仅供有兴趣的读者参考。<br>首先不用说。先安装<code>VueCli3</code>. 命令如下。</p><p><strong><code>npm install -g @vue/cli</code></strong></p><p>如果之前有使用<code>VueVli2</code>的同学。需要先卸载。官网给出了详细的介绍。并且也提供了在全局安装<code>VueCli3</code>的<br>情况下。如何生成使用<code>VueCli2</code>.请参考官方文档。**<a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#%E6%8B%89%E5%8F%96-2-x-%E6%A8%A1%E6%9D%BF-%E6%97%A7%E7%89%88%E6%9C%AC">VueCli3官网</a>**</p><p>再说回<code>VueCli3</code>,安装好以后，使用**<code>VS Code</code>**打开安装目录下文件夹。</p><h2 id="2-Vux"><a href="#2-Vux" class="headerlink" title="2.Vux"></a>2.Vux</h2><h2 id="3-Vuecli3-Vux集成"><a href="#3-Vuecli3-Vux集成" class="headerlink" title="3.Vuecli3 + Vux集成"></a>3.Vuecli3 + Vux集成</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> Vux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小程序技术选型资料参考</title>
+      <link href="/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/"/>
+      <url>/2019/12/11/xiao-cheng-xu-ji-zhu-xuan-xing-zi-liao-can-kao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="技术调研"><a href="#技术调研" class="headerlink" title="技术调研"></a>技术调研</h1><h2 id="小程序背景"><a href="#小程序背景" class="headerlink" title="小程序背景"></a>小程序背景</h2><p>在当前阶段，小程序百花齐放，各家都推出了自己的小程序。主流的有**<a href="https://mp.weixin.qq.com/cgi-bin/wx">微信小程序</a><strong>，<br><strong><a href="https://mini.open.alipay.com/channel/miniIndex.htm">支付宝小程序</a><strong>，</strong><a href="https://q.qq.com/">QQ小程序</a></strong>,</strong><a href="https://developer.toutiao.com/">字节跳动小程序</a>**，<br>**<a href="https://smartprogram.baidu.com/developer/index.html">百度小程序</a>**等等。各小程序为了各自的利益。纷纷建立自己的开发规则和语言风格。这对于前端开发人员是及其痛苦的事情。</p><h2 id="小程序发展"><a href="#小程序发展" class="headerlink" title="小程序发展"></a>小程序发展</h2><p>最早微信提供了开发微信小程序的原生方式。制定了一套自己的规则和语言逻辑。但随着业务的庞大，项目更新迭代速度等因素。仅仅使用原生开发方式无法满足<br>大多数开发人员的需求，为此，微信在原生开发的基础上推出了基于**<a href="https://cn.vuejs.org/">Vue.js</a><strong>的</strong><a href="https://wepyjs.github.io/wepy-docs/">Wepy</a><strong>小程序组件化框架。<br>组件化是一种高效的处理复杂应用系统，更好的明确功能模块作用的方式。目的把复杂系统拆分成多个组件，分离组件边界和责任，便于独立升级和维护。故一经推出就受到热烈欢迎。然而<br>随着其它小程序的发展，业界迫切希望有一个强大的框架能够涵盖多家小程序开发。实现一套代码多端复用。这和很早之前就有的跨平台开发其实及其相似。<br>于是就衍生出来了今天的两位主角。</strong><a href="https://taro.aotu.io/">Taro</a>** 与 <strong><a href="https://uniapp.dcloud.io/README">uni-app</a></strong>.</p><h3 id="Taro"><a href="#Taro" class="headerlink" title="Taro"></a>Taro</h3><p>先看官网介绍。<br>Taro 是一套遵循 React 语法规范的 多端开发 解决方案。<br>现如今市面上端的形态多种多样，Web、React-Native、微信小程序等各种端大行其道，<br>当业务要求同时在不同的端都要求有所表现的时候，针对不同的端去编写多套代码的成本显然非常高，这时候只编写一套代码就能够适配到多端的能力就显得极为需要。<br>使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信&#x2F;百度&#x2F;支付宝&#x2F;字节跳动&#x2F;QQ小程序、快应用、H5、React-Native 等）运行的代码。<br>下面可以体验一下小程序的感觉。</p><img title="京东购物" src="http://img13.360buyimg.com/uba/jfs/t1/15928/6/12705/268303/5c9a3f55E1aa605df/662afeee167b3d3b.jpg" width="140" height="140"><img title="京东到家" src="http://storage.360buyimg.com/taro-resource/cases/daojia.png" width="140" height="140"><img title="京东到家" src="https://img14.360buyimg.com/uba/jfs/t1/15658/34/15000/57355/5cac3381Ebb1763b1/5ebe50275f9c09d3.jpg" width="140" height="140"><h3 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h3><p>先看官网介绍。uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;QQ&#x2F;钉钉）等多个平台。<br>uni，读 you ni，是统一的意思。很多人以为小程序是微信先推出的，其实，DCloud才是这个行业的开创者。<br>在2015年9月，DCloud推进微信团队开展小程序业务，演示了流应用的秒开应用、扫码获取应用、分享链接获取应用等众多场景案例，以及分享了webview体验优化的经验。<br>微信团队经过分析，于2016年初决定上线小程序业务，但其没有接入联盟标准，而是订制了自己的标准。<br>而更多公司因利益纷争严重，标准难以统一。技术是纯粹的，不应该因为商业利益而分裂。开发者面对如此多的私有标准不是一件正确的事情。<br>虽然是始作俑者，但造成混乱的局面非DCloud所愿。于是我们决定开发一个免费开源的框架。既然各巨头无法在标准上达成一致，那么就通过这个框架为开发者抹平各平台差异。这，就是uni-app的由来。</p><img title="csdn" src="https://img-cdn-qiniu.dcloud.net.cn/doc/csdn/csdn.png" width="140" height="140"><img title="csdn" src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/oschina_weixin.jpg" width="140" height="140"><img title="color-ui" src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/img/color-ui-weapp.jpg"  width="140" height="140"><img title="color-ui" src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/img/color-ui-H5.jpg" width="140" height="140"><h2 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h2><p>京东出品-<strong>(taro泰罗)</strong><a href="https://juejin.im/post/5c90eb366fb9a070d4199cc9">小程序多端框架全面测评</a></p><p>DCloud出品-<strong>(uni-app统一)</strong><a href="https://juejin.im/post/5ca1736af265da30ae314248">跨端开发框架深度横评</a></p><p>DCloud出品-<strong>(uni-app统一)</strong><a href="https://juejin.im/post/5cfdcf056fb9a07ecd3d5068">小程序开发：用原生还是选框架（wepy&#x2F;mpvue&#x2F;uni-app&#x2F;taro）？</a></p><p>路人出品-<strong>(对比分析)</strong><a href="https://zhuanlan.zhihu.com/p/55903320">Taro vs uni-app选型对比</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初步用户行为日志分析记录</title>
+      <link href="/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/"/>
+      <url>/2019/06/28/chu-bu-yong-hu-xing-wei-ri-zhi-fen-xi-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="用户行为日志采集方案"><a href="#用户行为日志采集方案" class="headerlink" title="用户行为日志采集方案"></a>用户行为日志采集方案</h2><p>关于用户行为日志分析，这几天查阅了相关资料网上大概有四种方案<br>主要分为以下三类：</p><ul><li>代码埋点：在需要埋点的节点调用接口，携带数据上传。如百度统计等；</li><li>可视化埋点：使用可视化工具进行配置化的埋点，即所谓的「无痕埋点」，前端在页面加载时，可以读取配置数据，自动调用接口进行埋点。如开源的Mixpanel;</li><li>无埋点：前端自动采集全部事件并上报埋点数据。如国内的神策数据，目前比较流行的例如GrowingIO等；</li></ul><p>结合目前我们现有的情况，决定使用代码埋点的方式来初步实现公司的用户行为日志采集。</p><h3 id="代码埋点"><a href="#代码埋点" class="headerlink" title="代码埋点"></a>代码埋点</h3><p>代码埋点的方式有：声明式埋点，命令式埋点，注解式埋点。<br>结合现有的技术，打算采用注解式埋点作为基础，逐步扩展，目前参考了一些开源项目，已有大概思路。</p><h3 id="埋点行为"><a href="#埋点行为" class="headerlink" title="埋点行为"></a>埋点行为</h3><p>大概参考了一下网上例子，基本把采集日志的时机场景化了。主要有如下场景行为：</p><h4 id="页面展现埋点"><a href="#页面展现埋点" class="headerlink" title="页面展现埋点"></a>页面展现埋点</h4><p>这种很好理解，一打开即触发埋点行为。一关闭即可触发埋点行为。</p><h4 id="点击统计埋点"><a href="#点击统计埋点" class="headerlink" title="点击统计埋点"></a>点击统计埋点</h4><p>这种类似于点击事件。页面上的按钮，图标等，触发埋点行为。</p><h4 id="区域展现埋点"><a href="#区域展现埋点" class="headerlink" title="区域展现埋点"></a>区域展现埋点</h4><p>这种是有多个切换页面的时候，就有区域的概念，显示隐藏某一块内容的时候触发埋点行为。</p><h4 id="可视范围埋点"><a href="#可视范围埋点" class="headerlink" title="可视范围埋点"></a>可视范围埋点</h4><p>这种就类似所见即所得，当用户屏幕滚动到一定的范围，就开始触发埋点行为。</p><h3 id="采集信息"><a href="#采集信息" class="headerlink" title="采集信息"></a>采集信息</h3><p>目前这块内容还没有完全确定，只有个大概的思路。需要具体采集什么字段，结合我们自身的业务考虑。<br>有一些通用字段可以确定。如</p><table><thead><tr><th>内容</th><th>说明</th></tr></thead><tbody><tr><td>id</td><td>上报信息id</td></tr><tr><td>reportTime</td><td>上报信息时间</td></tr><tr><td>reportContent</td><td>上报内容</td></tr><tr><td>reportType</td><td>上报类型（点击，页面，区域，可视）</td></tr><tr><td>reportDevice</td><td>上报设备型号</td></tr><tr><td>reprotName</td><td>上报人姓名</td></tr><tr><td>reprotOrg</td><td>上报人组织</td></tr></tbody></table><p>以上只是想当然的大概字段，具体如何定，各位可以商量一下。</p><p>相关参考资源链接如下：</p><p><a href="https://www.webfunny.cn/?source=1">前端监控系统</a></p><p><a href="https://lhammer.cn/v-track/#/">v-track开源</a></p><p><a href="https://github.com/Qquanwei/trackpoint-tools">无痕埋点辅助工具库</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 埋点统计 </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何利用github+hexo搭建自己的博客!</title>
+      <link href="/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/"/>
+      <url>/2018/04/11/ru-he-li-yong-github-hexo-da-jian-zi-ji-de-bo-ke/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p> 一直在想要不要写这样的一篇教程.最后还是觉得并没有多大的必要.就像mrs周说的,不要重复造无意义的轮子.网上已经有很多这样的教程了.</p><p>   不过呢,我觉得还是可以记录一下比较好的教程.方便将来有需要的人!<span id="more"></span>    </p><h2 id="github搭建blog"><a href="#github搭建blog" class="headerlink" title="github搭建blog"></a>github搭建blog</h2><pre><code>github搭建blog</code></pre><blockquote><p><a href="http://www.cnblogs.com/tengj/p/5348560.html" title="hexo搭建教程"> http://www.cnblogs.com/tengj/p/5348560.html</a><br><a href="http://hifor.net/2015/07/01/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-hexo-github/" title="搭建教程">http://hifor.net/2015/07/01/零基础免费搭建个人博客-hexo-github/</a><br><a href="http://www.jianshu.com/p/465830080ea9" title="搭建教程">http://www.jianshu.com/p/465830080ea9</a></p></blockquote><h2 id="blog主题"><a href="#blog主题" class="headerlink" title="blog主题"></a>blog主题</h2><pre><code>blog主题</code></pre><blockquote><p><a href="https://github.com/litten/hexo-theme-yilia" title="主题"> https://github.com/litten/hexo-theme-yilia</a></p></blockquote><h2 id="配置主题的教程"><a href="#配置主题的教程" class="headerlink" title="配置主题的教程"></a>配置主题的教程</h2><pre><code>配置主题的教程</code></pre><blockquote><p><a href="http://blog.csdn.net/willxue123/article/details/50994852" title="配置主题">http://blog.csdn.net/willxue123/article/details/50994852</a><br><a href="http://jingyan.baidu.com/" title="配置主题">http://jingyan.baidu.com/</a></p></blockquote><h2 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h2><pre><code>next主题</code></pre><blockquote><p><a href="http://www.jianshu.com/p/f66103553c45" title="nexi主题">http://www.jianshu.com/p/f66103553c45</a></p></blockquote><h2 id="搭建相册"><a href="#搭建相册" class="headerlink" title="搭建相册"></a>搭建相册</h2><pre><code>搭建相册</code></pre><blockquote><p><a href="http://www.tuicool.com/articles/fYZ7Zrj" title="相册">http://www.tuicool.com/articles/fYZ7Zrj</a><br>    <a href="http://www.cnblogs.com/jarson-7426/" title="相册">http://www.cnblogs.com/jarson-7426/</a><br>    <a href="http://www.cnblogs.com/xljzlw/p/5137622.html?utm_source=tuicool&utm_medium=referral" title="相册">http://www.cnblogs.com/xljzlw/p/5137622.html?utm_source&#x3D;tuicool&amp;utm_medium&#x3D;referral</a></p></blockquote><p>以上就是我搭建blog时参考的教程.真的是很感谢这些热爱写教程的人.才让我有了一个如此美好的blog.当然在接下来的日子里我会继续完善我的博客.</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>  这是去往<a href="https://troyirvo.github.io/">本人博客</a>的链接.虽然现在没有什么文章.但以后会慢慢的多起来的.期待各位的关注!!!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
