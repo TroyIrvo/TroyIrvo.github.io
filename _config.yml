@@ -119,7 +119,7 @@ baidu_url_submit:
 deploy:
   - type: git
     repo: 
-      github: git@github.com:TroyIrvo/TroyIrvo.github.io.git
-      coding: git@git.dev.tencent.com:dhcalvin/TroyIrvo.github.io.git
+      github: https://github.com/TroyIrvo/TroyIrvo.github.io.git
+     # coding: git@git.dev.tencent.com:dhcalvin/TroyIrvo.github.io.git
     branch: master
   #- type: baidu_url_submitter  

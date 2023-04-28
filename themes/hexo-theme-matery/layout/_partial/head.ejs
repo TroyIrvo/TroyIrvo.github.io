@@ -29,14 +29,19 @@
 
     // keywords.
     var keyWords = config.keywords ? config.keywords : config.title;
-    keyWords = title ? title  + ', ' + keyWords : keyWords;
+    if (page.keywords) {
+        keyWords = page.keywords;
+    } else {
+    	keyWords = title ? title  + ', ' + keyWords : keyWords;
+    }
 
     // description.
-    var description = null;
-    if (page.hasOwnProperty('__post') && page.__post) {
+    var description = config.description ? config.description : config.title;
+    if (page.summary) {
+        description = page.summary;
+    } else if (page.hasOwnProperty('__post') && page.__post) {
         description = strip_html(page.content).substring(0, 120);
     }
-    description = description ? description : pageTitle;
 
     let iconType = 'image/png'
     let faviconExt = theme.favicon.substr(theme.favicon.lastIndexOf('.') + 1, theme.favicon.length)
@@ -52,8 +57,6 @@
         iconType = 'image/jpeg'
     } else if (faviconExt === 'ico') {
         iconType = 'image/x-icon, image/vnd.microsoft.icon'
-    } else {
-        // more definitions
     }
 %>
 
@@ -68,23 +71,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <%- partial('_partial/google-analytics') %>
     <title><%= pageTitle %></title>
-    <link rel="icon" type="<%= iconType %>" href="<%- theme.favicon %>">
+    <link rel="icon" type="<%= iconType %>" href="<%- theme.jsDelivr.url %><%- url_for(theme.favicon) %>">
+    <%- partial('_partial/main-style') %>
 
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.fontAwesome %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.materialize %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.aos %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.animate %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.lightgallery %>">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <style type="text/css">
-        <% if (!theme.code.break) { %>
-        code[class*="language-"], pre[class*="language-"] {
-            white-space: pre !important;
-        }
-        <% } %>
-    </style>
+    <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.jquery) %>"></script>
 
-    <script src="<%- theme.libs.js.jquery %>"></script>
 </head>
